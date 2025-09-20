@@ -20,6 +20,13 @@ class TaskController extends Controller
 
     public function store(Request $request) //POST
     {
+        $data = $request->all();
+        if (empty($data)) {
+            return response()->json([
+                'message' => 'Необходимо предоставить данные для создания задач'
+            ], 400);
+        }
+
         try {
             $validated = $request->validate([
                 '*.title' => 'required|string|max:127',
@@ -64,6 +71,13 @@ class TaskController extends Controller
 
     public function update(Request $request, string $id) //PUT с id
     {
+        $data = $request->all();
+        if (empty($data)) {
+            return response()->json([
+                'message' => 'Необходимо предоставить данные для изменения задачи'
+            ], 400);
+        }
+
         try {
             $validated = $request->validate([
                 'title' => 'sometimes|string|max:127',
