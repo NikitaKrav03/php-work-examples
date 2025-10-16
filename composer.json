@@ -1,0 +1,8 @@
+{
+    "require": {
+        "laravel/framework": "^v12.34.0",
+        "livewire/livewire": "^3.6",
+        "phpoffice/phpspreadsheet": "^5.1",
+        "maatwebsite/excel": "^1.1"
+    }
+}
